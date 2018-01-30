@@ -15,13 +15,31 @@ html, body {
 	display: grid;
 	height: 100%;
 	grid-template-columns: 10% auto 10%;
-	grid-template-rows: 50px auto;
+	grid-template-rows: 1fr auto;
 	grid-template-areas: "h h h" ". c .";
 }
 
 .header {
 	grid-area: h;
 	background-color: rgba(198, 119, 64, 0.35);
+}
+
+.header > div {
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header > div > div{
+	margin: 5px 20px;
+	background-color: rgba(81,81,40,0.35);
+	padding: 2px 20px;
+	align-self: center;
+	width: auto;
+}
+
+.header > div > div:nth-last-child(1) {
+	margin-left: auto;
 }
 
 .content {
@@ -45,5 +63,5 @@ html, body {
 
 .content-item > p {
 	color: lightslategray;
-	text-align:justify;
+	text-align: justify;
 }
