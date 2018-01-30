@@ -1,0 +1,49 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.center-children {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: grid;
+	height: 100%;
+	grid-template-columns: 10% auto 10%;
+	grid-template-rows: 50px auto;
+	grid-template-areas: "h h h" ". c .";
+}
+
+.header {
+	grid-area: h;
+	background-color: rgba(198, 119, 64, 0.35);
+}
+
+.content {
+	grid-area: c;
+	padding-top: 20px;
+	background-color: rgba(35, 186, 198, 0.35);
+	display: flex;
+	flex-direction: column;
+}
+
+.content-item {
+	background-color: rgba(35, 186, 198, 0.35);
+	padding: 10px;
+	width: 90%;
+	margin: 10px auto;
+}
+
+.content-item > h2 {
+	color: black;
+}
+
+.content-item > p {
+	color: lightslategray;
+	text-align:justify;
+}
