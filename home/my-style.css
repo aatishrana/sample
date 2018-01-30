@@ -1,0 +1,56 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.center-children {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: grid;
+	height: 100%;
+	background-color: rgba(198, 192, 70, 0.35);
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 50px auto;
+	grid-template-areas: "h h h" "m c c ";
+}
+
+.header {
+	grid-area: h;
+	background-color: rgba(198, 119, 64, 0.35);
+}
+
+.user-detail {
+	grid-area: m;
+	background-color: rgba(35, 186, 198, 0.35);
+}
+
+.user {
+	background-color: aqua;
+	width: 50%;
+	height: 30%;
+	margin: 20px;
+}
+
+.quotes {
+	grid-area: c;
+}
+
+.jumbotron {
+	background-color: aqua;
+	width: 70%;
+	height: 70%;
+	margin: 20px;
+}
+
+@media screen and (max-width: 720px) {
+	.container {
+		grid-template-rows: 50px  auto;
+		grid-template-areas: "h h h" "c c c" "m m m";
+	}
+}
