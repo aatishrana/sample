@@ -1,67 +1,102 @@
 html, body {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
+	height  : 100%;
+	width   : 100%;
+	margin  : 0;
+	padding : 0;
 }
 
 .center-children {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
 }
 
 .container {
-	display: grid;
-	height: 100%;
-	grid-template-columns: 10% auto 10%;
-	grid-template-rows: 1fr auto;
-	grid-template-areas: "h h h" ". c .";
+	display               : grid;
+	height                : 100%;
+	grid-template-columns : 10% auto 10%;
+	grid-template-rows    : 1fr auto;
+	grid-template-areas   : "h h h" ". c .";
 }
 
 .header {
-	grid-area: h;
-	background-color: rgba(198, 119, 64, 0.35);
+	grid-area        : h;
+	background-color : rgba(198, 119, 64, 0.35);
 }
 
 .header > div {
-	height: 100%;
-	display: flex;
-	flex-wrap: wrap;
+	height  : 100%;
+	display : flex;
+	width   : 80%;
+	margin  : auto;
 }
 
-.header > div > div{
-	margin: 5px 20px;
-	background-color: rgba(81,81,40,0.35);
-	padding: 2px 20px;
-	align-self: center;
-	width: auto;
+.header > div > div {
+	margin     : 5px 10px 5px 0;
+	padding    : 2px 10px 2px 0;
+	align-self : center;
+	width      : auto;
 }
 
-.header > div > div:nth-last-child(1) {
-	margin-left: auto;
+
+.brand {
+	font-weight : 700;
 }
 
 .content {
-	grid-area: c;
-	padding-top: 20px;
-	background-color: rgba(35, 186, 198, 0.35);
-	display: flex;
-	flex-direction: column;
+	grid-area        : c;
+	padding-top      : 20px;
+	background-color : rgba(35, 186, 198, 0.35);
+	display          : flex;
+	flex-direction   : column;
 }
 
 .content-item {
-	background-color: rgba(35, 186, 198, 0.35);
-	padding: 10px;
-	width: 90%;
-	margin: 10px auto;
+	background-color : rgba(35, 186, 198, 0.35);
+	padding          : 10px;
+	width            : 90%;
+	margin           : 10px auto;
 }
 
 .content-item > h2 {
-	color: black;
+	color : black;
 }
 
 .content-item > p {
-	color: lightslategray;
-	text-align: justify;
+	color      : lightslategray;
+	text-align : justify;
+}
+
+@media screen and (max-width : 720px) {
+	.container {
+		grid-template-columns : 4% auto 4%;
+	}
+
+	.header > div {
+		width : 92%;
+	}
+}
+
+@media screen and (max-width : 600px) {
+	.header > div {
+		flex-wrap : wrap;
+	}
+
+	.header > div > div {
+		margin-right  : 0;
+		margin-left   : 0;
+		padding-right : 0;
+		padding-left  : 0;
+		flex          : 1 1 33%;
+		text-align: center;
+	}
+
+	.header > div > div:first-child {
+		flex          : 1 1 100%;
+	}
+
+	.brand {
+		font-size: large;
+	}
+
 }
